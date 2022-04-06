@@ -1,13 +1,17 @@
 import "./App.css";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Container } from "react-bootstrap"
+
+import Homepage from "./pages/Homepage";
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Container>
-          <h1>Hello</h1>
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+          </Routes>
         </Container>
       </Router>
     </div>
