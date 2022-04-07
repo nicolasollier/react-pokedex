@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Container>
+        <Container className="container mx-auto px-4">
           <Routes>
             <Route path="/" element={<Homepage />} />
           </Routes>

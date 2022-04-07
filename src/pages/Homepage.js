@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { Row, Col } from "react-bootstrap";
 import axios from "axios";
 
 import Pokemon from "../components/Pokemon";
+import Loader from "../components/Loader/Loader";
 
-const Homepage = () => {  
+const Homepage = () => {
   const [pokemons, setPokemons] = useState([]);
   const [loading, setLoading] = useState(true);
-  
+
   useEffect(() => {
     getPokemonList();
 
@@ -32,11 +34,17 @@ const Homepage = () => {
   return (
     <>
       {loading ? (
-        <h1>Loading...</h1>
+        <Loader />
       ) : (
-        pokemons.map((pokemon) => {
-          return <Pokemon key={pokemon.data.id} pokeDatas={pokemon.data} />;
-        })
+        <Row className="grid grid-rows-4">
+          {pokemons.map((pokemon) => {
+            return (
+              <Col key={pokemon.data.id} className="grid grid-cols-4 gap-4">
+                <Pokemon pokemon={pokemon.data} />
+              </Col>
+            );
+          })}
+        </Row>
       )}
     </>
   );
