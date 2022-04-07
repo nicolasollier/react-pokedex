@@ -1,0 +1,26 @@
+.loader__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 28vh;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.loader__content {
+  display: flex;
+  position: relative;
+  top: 8px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader__txt {
+  margin-top: 40px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #1E293B;
+}
