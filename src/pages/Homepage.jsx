@@ -18,7 +18,7 @@ const Homepage = () => {
 
   //Fetch Pokemons with => https://pokeapi.co/api/v2/pokemon
   const getPokemons = async () => {
-    const res = await axios.get(`https://pokeapi.co/api/v2/pokemon`);
+    const res = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=151`);
     const { results } = res.data;
     return results;
   };
