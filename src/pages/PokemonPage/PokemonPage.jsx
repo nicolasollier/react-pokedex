@@ -4,7 +4,8 @@ import axios from "axios";
 
 import { Grid } from "@mui/material";
 
-import Header from "../../components/Layout/Header";
+import Header from "../../components/Layout/Header/Header";
+import Footer from "../../components/Layout/Footer/Footer";
 import Loader from "../../components/UI/Loader/Loader";
 import PokemonPortrait from "../../components/PokemonPortrait/PokemonPortrait";
 import PokemonAbilities from "../../components/PokemonAbilities/PokemonAbilities";
@@ -63,6 +64,7 @@ const PokemonPage = () => {
           </Grid>
         </>
       )}
+      <Footer />
     </>
   );
 };

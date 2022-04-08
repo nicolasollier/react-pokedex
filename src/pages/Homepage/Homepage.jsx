@@ -3,7 +3,8 @@ import axios from "axios";
 import { Grid } from "@mui/material";
 import Loader from "../../components/UI/Loader/Loader";
 
-import Header from "../../components/Layout/Header";
+import Header from "../../components/Layout/Header/Header";
+import Footer from "../../components/Layout/Footer/Footer";
 import Pokemon from "../../components/Pokemon/Pokemon";
 import classes from "./Homepage.module.css";
 
@@ -44,23 +45,29 @@ const Homepage = () => {
     <>
       <Header />
       {!isLoading ? (
-        <Grid className={classes.homepage__content} container spacing={2}>
-          {pokemons.map((pokemon) => {
-            return (
-              <Grid
-                key={Math.random()}
-                item
-                xs={12}
-                sm={12}
-                md={4}
-                lg={4}
-                xl={4}
-              >
-                <Pokemon pokemon={pokemon.data} />
-              </Grid>
-            );
-          })}
-        </Grid>
+        <React.Fragment>
+          <Grid className={classes.homepage__content} container spacing={2}>
+            {pokemons.map((pokemon) => {
+              return (
+                <Grid
+                  key={Math.random()}
+                  item
+                  xs={12}
+                  sm={12}
+                  md={4}
+                  lg={4}
+                  xl={4}
+                >
+                  <Pokemon
+                    className={classes.homepage__cardContainer}
+                    pokemon={pokemon.data}
+                  />
+                </Grid>
+              );
+            })}
+          </Grid>
+          <Footer />
+        </React.Fragment>
       ) : (
         <Loader />
       )}
