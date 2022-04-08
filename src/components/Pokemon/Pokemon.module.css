@@ -10,3 +10,7 @@
   border-radius: 50%;
   background-color: #F1F5F9;
 }
+
+a {
+  text-decoration: none;
+}

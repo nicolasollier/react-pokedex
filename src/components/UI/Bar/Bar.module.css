@@ -1,0 +1,16 @@
+.barFill {
+  position: relative;
+  width: 100%;
+  float: right;
+  height: 1.2rem;
+  border-radius: 2px;
+  overflow: hidden;
+  transition: .3s;
+  background-color: #F1F5F9
+}
+
+.barActive {
+  position: absolute;
+  height: 100%;
+  background-color: #4ADE80;
+}
