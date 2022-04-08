@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Grid } from "@mui/material";
-import Loader from "../components/UI/Loader/Loader";
+import Loader from "../../components/UI/Loader/Loader";
 
-import Header from "../components/Layout/Header";
-import Pokemon from "../components/Pokemon/Pokemon";
-import classes from "./Homepage.module.css"
+import Header from "../../components/Layout/Header";
+import Pokemon from "../../components/Pokemon/Pokemon";
+import classes from "./Homepage.module.css";
 
 const Homepage = () => {
   const [pokemons, setPokemons] = useState([]);
@@ -37,10 +37,7 @@ const Homepage = () => {
     }
 
     setPokemons(pokemonArr);
-
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
+    setIsLoading(false);
   };
 
   return (
